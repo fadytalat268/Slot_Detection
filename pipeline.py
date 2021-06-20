@@ -33,7 +33,7 @@ def Slot_Annotation_pipeline(in_image):
     4. if vacant slot found check if handi-capped 
     '''
     # get predicted points
-    pred_points = image_predict_marking_points(in_image, point_model)
+    pred_points, out_image = image_predict_marking_points(in_image, point_model)
     
     # detect slots if found
     out0, slots_dict = inference_slots(pred_points[0])
@@ -47,11 +47,11 @@ def Slot_Annotation_pipeline(in_image):
                 state[1] = 'handicapped'
     
         # draw each slot type on it
-        draw_classification(in_image,state[2],state[1])
+        draw_classification(out_image,state[2],state[1])
     
 
     
-    return in_image
+    return out_image
     
     
     
