@@ -1,0 +1,19 @@
+Contribution of each member in the team:
+
+1. Model architecture and implmentation:
+Caroline Karam, Girgis Mamdouh, Monica Romany
+
+2. Marking Points detection:
+ Monica Romany
+
+3. Slot Detection:
+Caroline Karam
+
+4. Classification of Vaccant Slots:
+Fady Taalat,Girgis Mamdouh
+
+5. Handicapped sign detection:
+Caroline Karam, Girgis Mamdouh,Fady Taalat, Monica Romany
+
+6. GUI and pipline code:
+Fady Taalat
