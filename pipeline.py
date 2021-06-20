@@ -1,7 +1,7 @@
 from vacancy_inference import check_vacancy,vacancy_model_init,draw_classification
 from handiacapped import compare_hist_list
 from dip_project import init_marking_points_model, image_predict_marking_points
-from slot_functions import inference_slots
+from slot_functions import inference_slots, visualize_slot
 
 
 
@@ -34,9 +34,15 @@ def Slot_Annotation_pipeline(in_image):
     '''
     # get predicted points
     pred_points, out_image = image_predict_marking_points(in_image, point_model)
+    print(pred_points)
     
     # detect slots if found
     out0, slots_dict = inference_slots(pred_points[0])
+    out_image = visualize_slot(out_image,out0)
+    
+    
+    
+    # out0, slots_dict = inference_slots(pred_points[0])
     
     # Check vacancy of slots
     vacancy_states = check_vacancy(in_image, slots_dict, vacancy_m)
